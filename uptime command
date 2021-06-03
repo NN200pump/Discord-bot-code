@@ -1,0 +1,13 @@
+import random
+from datetime import datetime
+
+
+client.launch_time = datetime.utcnow()
+
+@client.command()
+async def uptime(ctx):
+    delta_uptime = datetime.utcnow() - client.launch_time
+    hours, remainder = divmod(int(delta_uptime.total_seconds()), 3600)
+    minutes, seconds = divmod(remainder, 60)
+    days, hours = divmod(hours, 24)
+    await ctx.send(f" I have been up for {days}d, {hours}h, {minutes}m")
