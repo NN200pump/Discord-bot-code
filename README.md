@@ -1,1 +1,1 @@
-# Discord-bot-code
+Hey all in this respository I will be putting some simple fun commands. I have made these commands when I was bored and wanted you guys to have a look! Join the discord at https://discord.gg/ennHKMmVMk
