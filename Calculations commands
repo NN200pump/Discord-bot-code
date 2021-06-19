@@ -1,0 +1,30 @@
+######### ADDITION #######
+@client.command() 
+async def add(ctx, *nums):
+    operation = " + ".join(nums)
+    await ctx.send(f'{operation} = {eval(operation)}')
+
+
+
+####### SUBTRACTION ####3##
+
+@client.command() 
+async def sub(ctx, *nums): 
+    operation = " - ".join(nums)
+    await ctx.send(f'{operation} = {eval(operation)}')
+
+
+###### MULTIPLY #########
+
+@client.command() 
+async def multiply(ctx, *nums): 
+    operation = " * ".join(nums)
+    await ctx.send(f'{operation} = {eval(operation)}')
+
+
+####### DIVIDE #######
+
+@client.command() 
+async def divide(ctx, *nums): 
+    operation = " / ".join(nums)
+    await ctx.send(f'{operation} = {eval(operation)}')
