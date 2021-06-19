@@ -1,0 +1,8 @@
+@client.command()
+@commands.has_permissions(administrator=True)
+async def channelcreate(ctx, message):
+  guild = ctx.message.guild
+  await guild.create_text_channel(message)
+  await ctx.send(f"Created the channel: {message}!")
+
+#THIS WILL CREATE A CHANNEL FOR YOU WITH THE NAME YOU WANT
