@@ -1,0 +1,22 @@
+@client.command()
+async def rolldice(ctx):
+    message = await ctx.send("Choose a number:\n**4**, **6**, **8**, **10**, **12**, **20** ")
+    
+    def check(m):
+        return m.author == ctx.author
+
+    try:
+        message = await client.wait_for("message", check = check, timeout = 30.0)
+        m = message.content
+
+        if m != "4" and m != "6" and m != "8" and m != "10" and m != "12" and m != "20":
+            await ctx.send("Sorry buddy, that's not a valid choice.")
+            return
+        
+        coming = await ctx.send("Here it comes...")
+        time.sleep(1)
+        await coming.delete()
+        await ctx.send(f"**{random.randint(1, int(m))}**")
+    except asyncio.TimeoutError:
+        await message.delete()
+        await ctx.send("Proccess has been canceled because you didn't respond within **30** seconds.")
